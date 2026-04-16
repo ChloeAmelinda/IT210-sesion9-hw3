@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body.light {
+            background-color: white;
+            color: black;
+        }
+
+        body.dark {
+            background-color: black;
+            color: white;
+        }
+    </style>
+</head>
+<body th:class="${theme}">
+
+<h1>Trang chủ</h1>
+<p>Theme hiện tại: <span th:text="${theme}"></span></p>
+
+<form th:action="@{/change-theme}" method="post">
+    <button name="theme" value="light">Light Mode</button>
+    <button name="theme" value="dark">Dark Mode</button>
+</form>
+
+</body>
+</html>
